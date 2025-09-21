@@ -1,6 +1,6 @@
 /* Reset and Base Styles */
 * {
-    margin: 0;
+    margin: 0;}
  /* Enhanced visual improvements for restaurant */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -728,6 +728,7 @@ nav a:hover, nav a.active {
 .developer-dropdown.open {
     max-height: 400px;
     padding: 1.5rem;
+   
 }
 
 .developer-info-detailed {
@@ -1472,3 +1473,38 @@ html {
     }
 }
 
+.card { display:flex; flex-direction:column; height: 520px; }
+.card img { aspect-ratio: 4 / 3; object-fit: cover; }
+.card .description { display:-webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+
+
+/* طبّق ستايل السلطات على جميع الكروت */
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  height: 400px;           /* نفس الارتفاع على الديسكتوب */
+}
+
+.menu-item img {
+  width: 100%;
+  aspect-ratio: 4 / 3;     /* نفس نسبة الصورة */
+  object-fit: cover;
+  height: auto;            /* يلغي الارتفاعات الثابتة السابقة */
+}
+
+.menu-item p {
+  flex: 1 1 auto;          /* يملأ المساحة الوسطي */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;   /* سطرين/ثلاثة مثل السلطات */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-item .price {
+  margin-top: auto;        /* السعر دائمًا أسفل الكرت */
+}
+
+/* على الشاشات الصغيرة: لا تثبّت الارتفاع */
+@media (max-width: 768px) {
+  .menu-item { height: auto; min-height: 300px; }
+}

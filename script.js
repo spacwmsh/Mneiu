@@ -735,12 +735,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // Hide loading after everything is ready
     setTimeout(hideLoading, 1000);
     
-    // Add welcome message for first-time visitors
-    if (!localStorage.getItem('hasVisited')) {
-        setTimeout(() => {
-            alert('مرحباً بك في منيونا الرقمي! استمتع بتصفح أشهى الأطباق');
-            localStorage.setItem('hasVisited', 'true');
-        }, 2000);
-    }
+    // تم حذف رسالة الترحيب للمرة الأولى نهائيًا
 });
-
